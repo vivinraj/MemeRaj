@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeRaj" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5Z-A4-GKF">
+                                <rect key="frame" x="0.0" y="561" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="PKM-y7-bZW">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="LPk-iz-LbT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="HY4-TS-SIR">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bGe-or-syG">
+                                            <rect key="frame" x="63" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="cameraButton"/>
+                                            <connections>
+                                                <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2Z-ky-Zwa"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLf-3A-JI3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" id="49R-Jb-R9O"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="G5Z-A4-GKF" secondAttribute="bottom" constant="-5" id="99P-Ht-tkL"/>
+                            <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" id="Hn7-py-hdU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VLf-3A-JI3" secondAttribute="trailing" constant="-20" id="IDE-v5-DeN"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NLr-JL-dMs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G5Z-A4-GKF" secondAttribute="trailing" constant="-20" id="QYJ-2d-CuZ"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Y6I-yc-pFp"/>
+                            <constraint firstItem="G5Z-A4-GKF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ckk-lj-y6d"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dhL-xr-xVI"/>
+                            <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" constant="5" id="ilJ-6T-w0U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VLf-3A-JI3" secondAttribute="trailing" constant="-20" id="qgl-ro-nAP"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="r9d-ox-aej"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NLr-JL-dMs"/>
+                                <exclude reference="49R-Jb-R9O"/>
+                                <exclude reference="ilJ-6T-w0U"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="bGe-or-syG" id="cil-0u-ue3"/>
+                        <outlet property="imagePickerView" destination="VLf-3A-JI3" id="ch4-Zx-n9x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="190" y="314"/>
         </scene>
     </scenes>
 </document>
