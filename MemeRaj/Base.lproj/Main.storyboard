@@ -30,7 +30,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bGe-or-syG">
                                             <rect key="frame" x="63" y="7" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="cameraButton"/>
+                                            <state key="normal" title="camera"/>
                                             <connections>
                                                 <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2Z-ky-Zwa"/>
                                             </connections>
@@ -41,6 +41,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLf-3A-JI3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z65-GG-CqW">
+                                <rect key="frame" x="260" y="498" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-B8-xki">
+                                <rect key="frame" x="275.5" y="54" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -48,7 +58,10 @@
                             <constraint firstAttribute="bottomMargin" secondItem="G5Z-A4-GKF" secondAttribute="bottom" constant="-5" id="99P-Ht-tkL"/>
                             <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" id="Hn7-py-hdU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VLf-3A-JI3" secondAttribute="trailing" constant="-20" id="IDE-v5-DeN"/>
+                            <constraint firstItem="lWX-B8-xki" firstAttribute="centerX" secondItem="VLf-3A-JI3" secondAttribute="centerX" id="Lif-ME-zzM"/>
                             <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NLr-JL-dMs"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="lWX-B8-xki" secondAttribute="bottom" constant="-84" id="O2M-TO-gS7"/>
+                            <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="Z65-GG-CqW" secondAttribute="bottom" constant="33" id="Pki-Yp-uhJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G5Z-A4-GKF" secondAttribute="trailing" constant="-20" id="QYJ-2d-CuZ"/>
                             <constraint firstItem="VLf-3A-JI3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Y6I-yc-pFp"/>
                             <constraint firstItem="G5Z-A4-GKF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ckk-lj-y6d"/>
@@ -56,6 +69,7 @@
                             <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" constant="5" id="ilJ-6T-w0U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VLf-3A-JI3" secondAttribute="trailing" constant="-20" id="qgl-ro-nAP"/>
                             <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="r9d-ox-aej"/>
+                            <constraint firstItem="Z65-GG-CqW" firstAttribute="centerX" secondItem="G5Z-A4-GKF" secondAttribute="centerX" id="vWh-mF-q8w"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -66,8 +80,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomLabel" destination="Z65-GG-CqW" id="gTN-wm-Sd7"/>
                         <outlet property="cameraButton" destination="bGe-or-syG" id="cil-0u-ue3"/>
                         <outlet property="imagePickerView" destination="VLf-3A-JI3" id="ch4-Zx-n9x"/>
+                        <outlet property="topLabel" destination="lWX-B8-xki" id="zuF-EN-YKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
