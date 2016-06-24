@@ -59,17 +59,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y = 0
         print("keyboard hiding")
     }
-   
     
+    
+    func generateMemedImage() -> UIImage
+    {
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //TODO : Hide toolbar & Navigation Bar
+        return memedImage
+    }
+    
+    struct Meme {
+        var text: String
+        var image: UIImage?
+        var memedImage: UIImage
+    }
+    
+    func save() {
+        //Create the meme
+        let meme = Meme( text: topLabel.text!, image: imagePickerView.image, memedImage: generateMemedImage())
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToKeyboardNotifications1()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     
@@ -79,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topLabel.defaultTextAttributes = memeTextAttributes
         bottomLabel.defaultTextAttributes = memeTextAttributes
         subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications1()
         
         }
     
