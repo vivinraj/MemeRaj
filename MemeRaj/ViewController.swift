@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topLabel: UITextField!
     @IBOutlet weak var bottomLabel: UITextField!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    @IBOutlet weak var topToolbar: UIToolbar!
     
     
     
@@ -67,12 +69,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage
     {
         // Render view to an image
+        topToolbar.hidden = true
+        bottomToolbar.hidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawViewHierarchyInRect(self.view.frame,
                                      afterScreenUpdates: true)
         let memedImage : UIImage =
             UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        topToolbar.hidden = false
+        bottomToolbar.hidden = false
         
         //TODO : Hide toolbar & Navigation Bar
         return memedImage
@@ -84,10 +91,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memedImage: UIImage
     }
     
-    func save() {
+   /* func save() {
         //Create the meme
         let meme = Meme( text: topLabel.text!, image: imagePickerView.image, memedImage: generateMemedImage())
-    }
+    }  */
     
     
     override func viewDidLoad() {
@@ -146,6 +153,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func shareButton(sender: AnyObject) {
+        //save()
+        generateMemedImage()
+        let image = generateMemedImage()
+        //let image =
+        let nextController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.presentViewController(nextController, animated: true, completion: nil)
+    }
+    
 
 
 
