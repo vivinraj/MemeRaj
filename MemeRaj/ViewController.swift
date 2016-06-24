@@ -25,22 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
        // NSStrokeWidthAttributeName : NSNumber(float: -4.0)
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    func viewWillAppear() {
-        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        topLabel.defaultTextAttributes = memeTextAttributes
-        bottomLabel.defaultTextAttributes = memeTextAttributes
-        subscribeToKeyboardNotifications()
-        }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
-    }
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -62,6 +46,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("get height")
         return keyboardSize.CGRectValue().height
         
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func viewWillAppear() {
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        topLabel.defaultTextAttributes = memeTextAttributes
+        bottomLabel.defaultTextAttributes = memeTextAttributes
+        subscribeToKeyboardNotifications()
+        }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
     
 
