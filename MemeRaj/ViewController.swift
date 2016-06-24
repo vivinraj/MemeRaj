@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomLabel: UITextField!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     
@@ -110,6 +111,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomLabel.defaultTextAttributes = memeTextAttributes
         subscribeToKeyboardNotifications()
         subscribeToKeyboardNotifications1()
+        //shareButton.enabled = false
         
         }
     
@@ -145,6 +147,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePickerView.image = image
             print("success2")
             imagePickerView.contentMode = UIViewContentMode.ScaleAspectFit
+            shareButton.enabled = true
+            print("share Button enabled")
             
         }
         dismissViewControllerAnimated(true, completion: nil)
