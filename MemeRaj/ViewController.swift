@@ -21,8 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
-       // NSStrokeWidthAttributeName : NSNumber(float: -4.0)
+        //NSStrokeWidthAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+        NSStrokeWidthAttributeName : NSNumber(float: -4.0)
     ]
     
     
@@ -35,9 +35,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
     
+    func subscribeToKeyboardNotifications1() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        print("subscribeToKeyNotifications")
+    }
+    
+    func unsubscribeToKeyboardNotifications1() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     
     func keyboardWillShow(notification: NSNotification) {
         view.frame.origin.y -= getKeyboardHeight(notification)
+        print("keyboard showing")
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -48,21 +58,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
 
+    func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y += getKeyboardHeight(notification)
+        print("keyboard hiding")
+    }
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeToKeyboardNotifications1()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func viewWillAppear() {
+    
+    override func viewWillAppear(animated: Bool) {
+        print("View Appearing")
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         topLabel.defaultTextAttributes = memeTextAttributes
         bottomLabel.defaultTextAttributes = memeTextAttributes
         subscribeToKeyboardNotifications()
+        
         }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+        unsubscribeToKeyboardNotifications1()
     }
     
 
