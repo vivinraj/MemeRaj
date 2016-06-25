@@ -26,16 +26,8 @@
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="LPk-iz-LbT"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="HY4-TS-SIR">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bGe-or-syG">
-                                            <rect key="frame" x="63" y="7" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="camera"/>
-                                            <connections>
-                                                <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2Z-ky-Zwa"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hWA-IN-hWh"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="HY4-TS-SIR"/>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLf-3A-JI3">
@@ -54,7 +46,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-Xp-ws2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem enabled="NO" title="Share" id="zYb-HQ-oCW">
+                                    <barButtonItem enabled="NO" systemItem="action" id="zYb-HQ-oCW">
                                         <connections>
                                             <action selector="shareButton:" destination="BYZ-38-t0r" id="gwe-9l-yaR"/>
                                         </connections>
@@ -96,7 +88,6 @@
                     <connections>
                         <outlet property="bottomLabel" destination="Z65-GG-CqW" id="gTN-wm-Sd7"/>
                         <outlet property="bottomToolbar" destination="G5Z-A4-GKF" id="kQC-WX-P92"/>
-                        <outlet property="cameraButton" destination="bGe-or-syG" id="cil-0u-ue3"/>
                         <outlet property="imagePickerView" destination="VLf-3A-JI3" id="ch4-Zx-n9x"/>
                         <outlet property="shareButton" destination="zYb-HQ-oCW" id="owE-cm-6pE"/>
                         <outlet property="topLabel" destination="lWX-B8-xki" id="zuF-EN-YKC"/>
