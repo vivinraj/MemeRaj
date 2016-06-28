@@ -53,13 +53,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     func keyboardWillShow(notification: NSNotification) {
-        textFieldDidBeginEditing(<#T##textField: UITextField##UITextField#>)
-        if textField = bottomLabel {
+        
         view.frame.origin.y -= getKeyboardHeight(notification)
         print("keyboard showing")
-        }
-        
-   // }
+     
         
     }
     
@@ -189,13 +186,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
    func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
         print("text field did begin editing")
-        //return text
     }
     
    /* func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let textField = textField
         return true
     } */
+    
+    
     
     
     
