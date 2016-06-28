@@ -38,11 +38,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-B8-xki">
-                                <rect key="frame" x="275.5" y="54" width="49" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-Xp-ws2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
@@ -53,6 +48,11 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-B8-xki">
+                                <rect key="frame" x="276" y="54" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -88,6 +88,7 @@
                     <connections>
                         <outlet property="bottomLabel" destination="Z65-GG-CqW" id="gTN-wm-Sd7"/>
                         <outlet property="bottomToolbar" destination="G5Z-A4-GKF" id="kQC-WX-P92"/>
+                        <outlet property="cameraButton" destination="HY4-TS-SIR" id="azq-9N-agH"/>
                         <outlet property="imagePickerView" destination="VLf-3A-JI3" id="ch4-Zx-n9x"/>
                         <outlet property="shareButton" destination="zYb-HQ-oCW" id="owE-cm-6pE"/>
                         <outlet property="topLabel" destination="lWX-B8-xki" id="zuF-EN-YKC"/>
