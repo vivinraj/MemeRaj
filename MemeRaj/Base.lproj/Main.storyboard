@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-Xp-ws2">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <barButtonItem enabled="NO" systemItem="action" id="zYb-HQ-oCW">
                                         <connections>
@@ -49,19 +49,19 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWX-B8-xki">
-                                <rect key="frame" x="276" y="54" width="49" height="30"/>
+                                <rect key="frame" x="276" y="95" width="49" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mir-Xp-ws2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="21J-18-kMk"/>
                             <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" id="49R-Jb-R9O"/>
-                            <constraint firstItem="lWX-B8-xki" firstAttribute="top" secondItem="Mir-Xp-ws2" secondAttribute="bottom" constant="10" id="4Jx-62-XA3"/>
                             <constraint firstAttribute="bottomMargin" secondItem="G5Z-A4-GKF" secondAttribute="bottom" constant="-5" id="99P-Ht-tkL"/>
+                            <constraint firstItem="lWX-B8-xki" firstAttribute="top" secondItem="Mir-Xp-ws2" secondAttribute="bottom" constant="31" id="Fmq-T7-miu"/>
                             <constraint firstItem="G5Z-A4-GKF" firstAttribute="top" secondItem="VLf-3A-JI3" secondAttribute="bottom" id="Hn7-py-hdU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VLf-3A-JI3" secondAttribute="trailing" constant="-20" id="IDE-v5-DeN"/>
+                            <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="Mir-Xp-ws2" secondAttribute="bottom" constant="-64" id="IRU-9s-mZK"/>
                             <constraint firstItem="lWX-B8-xki" firstAttribute="centerX" secondItem="VLf-3A-JI3" secondAttribute="centerX" id="Lif-ME-zzM"/>
                             <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NLr-JL-dMs"/>
                             <constraint firstItem="VLf-3A-JI3" firstAttribute="top" secondItem="lWX-B8-xki" secondAttribute="bottom" constant="-84" id="O2M-TO-gS7"/>
@@ -80,6 +80,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="NLr-JL-dMs"/>
+                                <exclude reference="O2M-TO-gS7"/>
                                 <exclude reference="49R-Jb-R9O"/>
                                 <exclude reference="ilJ-6T-w0U"/>
                             </mask>
