@@ -34,20 +34,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         print("subscribeToKeyNotifications")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        print("subscribeToKeyNotifications")
     }
     
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func subscribeToKeyboardNotifications1() {
+ /*   func subscribeToKeyboardNotifications1() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         print("subscribeToKeyNotifications")
     }
     
     func unsubscribeToKeyboardNotifications1() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
+    } */
     
     
     
@@ -106,7 +109,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         //Create the meme
-        let meme = Meme( text: topLabel.text!, text2: bottomLabel.text!, image: imagePickerView.image, memedImage: generateMemedImage())
+        let meme = Meme( text: topLabel.text!, text2: bottomLabel.text!, image: imagePickerView.image, memedImage: generateMemedImage() )
     }
     
     
@@ -125,7 +128,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setupTextField(bottomLabel, defaultText: "BOTTOM")
         
         subscribeToKeyboardNotifications()
-        subscribeToKeyboardNotifications1()
+        
         //shareButton.enabled = false
         
         }
@@ -141,7 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
-        unsubscribeToKeyboardNotifications1()
+        
     }
     
     func pickAnImage(chosenSource: UIImagePickerControllerSourceType) {
@@ -182,23 +185,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareButton(sender: AnyObject) {
         //save()
-        topToolbar.hidden = true
-        bottomToolbar.hidden = true
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame,
-                                     afterScreenUpdates: true)
-        let memedImage : UIImage =
-            UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        //generateMemedImage()
         
-        topToolbar.hidden = false
-        bottomToolbar.hidden = false
-        
-        let image = memedImage
+        let image = generateMemedImage()
         //let image =
         let nextController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
         self.presentViewController(nextController, animated: true, completion: nil)
-        save()
+        self.save()
+        
     }
     
 
@@ -208,24 +203,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("text field did begin editing")
     }
     
-
-    
-    
-    
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
-        textField.resignFirstResponder()
-        print("keyboard disappear on return")
-        
-        return true
-    }
-    
-    
-    
-    
-    
-    
-    
-
 
 
 }
