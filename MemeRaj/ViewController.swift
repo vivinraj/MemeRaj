@@ -54,9 +54,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         
+        if bottomLabel.isFirstResponder() {
+        
         view.frame.origin.y -= getKeyboardHeight(notification)
         print("keyboard showing")
-     
+        }
         
     }
     
