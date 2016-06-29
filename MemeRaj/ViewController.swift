@@ -121,15 +121,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(animated: Bool) {
         print("View Appearing")
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        topLabel.defaultTextAttributes = memeTextAttributes
-        bottomLabel.defaultTextAttributes = memeTextAttributes
-        bottomLabel.returnKeyType = UIReturnKeyType.Done
-        topLabel.returnKeyType = UIReturnKeyType.Done
+        setupTextField(topLabel, defaultText: "TOP")
+        setupTextField(bottomLabel, defaultText: "BOTTOM")
+        
         subscribeToKeyboardNotifications()
         subscribeToKeyboardNotifications1()
         //shareButton.enabled = false
         
         }
+    
+    
+    func setupTextField(textfield: UITextField, defaultText: String) {
+        textfield.delegate = self
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.returnKeyType = UIReturnKeyType.Done
+        textfield.text = defaultText
+    }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -137,21 +144,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeToKeyboardNotifications1()
     }
     
-    func pickAnImage() {
+    func pickAnImage(chosenSource: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.sourceType = chosenSource
         presentViewController(imagePicker, animated: true, completion: nil)
     }
 
  
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-       pickAnImage()
+       pickAnImage(UIImagePickerControllerSourceType.PhotoLibrary)
         
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
-        pickAnImage()
+        pickAnImage(UIImagePickerControllerSourceType.Camera)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -175,8 +182,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareButton(sender: AnyObject) {
         //save()
-        generateMemedImage()
-        let image = generateMemedImage()
+        topToolbar.hidden = true
+        bottomToolbar.hidden = true
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        topToolbar.hidden = false
+        bottomToolbar.hidden = false
+        
+        let image = memedImage
         //let image =
         let nextController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         self.presentViewController(nextController, animated: true, completion: nil)
@@ -190,15 +208,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("text field did begin editing")
     }
     
-   /* func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let textField = textField
-        return true
-    } */
-    
-    
-    
-    
-    
+
     
     
     
