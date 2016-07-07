@@ -43,17 +43,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
- /*   func subscribeToKeyboardNotifications1() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
-        print("subscribeToKeyNotifications")
-    }
-    
-    func unsubscribeToKeyboardNotifications1() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    } */
-    
-    
-    
     
     func keyboardWillShow(notification: NSNotification) {
         
@@ -110,6 +99,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         //Create the meme
         let meme = Meme( text: topLabel.text!, text2: bottomLabel.text!, image: imagePickerView.image, memedImage: generateMemedImage() )
+        
+        //(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+        
+       // (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+    
     }
     
     
@@ -126,6 +120,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         setupTextField(topLabel, defaultText: "TOP")
         setupTextField(bottomLabel, defaultText: "BOTTOM")
+        topLabel.returnKeyType = UIReturnKeyType.Done
+        bottomLabel.returnKeyType = UIReturnKeyType.Done
         
         subscribeToKeyboardNotifications()
         
@@ -184,17 +180,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareButton(sender: AnyObject) {
-        //save()
-        //generateMemedImage()
-        
         let image = generateMemedImage()
-        //let image =
         let nextController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
+            self.save()
         self.presentViewController(nextController, animated: true, completion: nil)
-        self.save()
+        
         
     }
+    
+    
+        
     
 
     
@@ -203,7 +198,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("text field did begin editing")
     }
     
-
-
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        textField.delegate = self
+        print("text Field should return")
+        return true;
+    }
+    
+    
+    
 }
+
+
 
