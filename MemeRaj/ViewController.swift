@@ -106,11 +106,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topLabel.delegate = self
         bottomLabel.delegate = self
+        setupTextField(topLabel, defaultText: "TOP")
+        setupTextField(bottomLabel, defaultText: "BOTTOM")
         
     }
     
@@ -118,8 +123,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(animated: Bool) {
         print("View Appearing")
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        setupTextField(topLabel, defaultText: "TOP")
-        setupTextField(bottomLabel, defaultText: "BOTTOM")
         topLabel.returnKeyType = UIReturnKeyType.Done
         bottomLabel.returnKeyType = UIReturnKeyType.Done
         
