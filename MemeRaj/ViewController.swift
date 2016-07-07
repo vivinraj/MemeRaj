@@ -182,8 +182,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareButton(sender: AnyObject) {
         let image = generateMemedImage()
         let nextController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            self.save()
+        
+        
+      //  typealias UIActivityViewControllerCompletionHandler = (String?, Bool) -> Void
+        
         self.presentViewController(nextController, animated: true, completion: nil)
+        
+        nextController.completionWithItemsHandler = {activity, completed, items, error in
+            if completed {
+                self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+
+        }
+      
+            
+        
+        
+        
         
         
     }
