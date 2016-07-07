@@ -210,8 +210,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
    func textFieldDidBeginEditing(textField: UITextField) {
+    
+    if textField.text == "TOP" || textField.text == "BOTTOM" {
         textField.text = ""
         print("text field did begin editing")
+    }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
