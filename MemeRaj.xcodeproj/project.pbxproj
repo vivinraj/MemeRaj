@@ -14,6 +14,7 @@
 		3714C7E31D18E9780019AE49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3714C7E11D18E9780019AE49 /* LaunchScreen.storyboard */; };
 		3714C7EE1D18E9790019AE49 /* MemeRajTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714C7ED1D18E9790019AE49 /* MemeRajTests.swift */; };
 		3714C7F91D18E9790019AE49 /* MemeRajUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714C7F81D18E9790019AE49 /* MemeRajUITests.swift */; };
+		3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B6361D33DB0A001BDF05 /* MemeRaj.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3714C7F41D18E9790019AE49 /* MemeRajUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeRajUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3714C7F81D18E9790019AE49 /* MemeRajUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRajUITests.swift; sourceTree = "<group>"; };
 		3714C7FA1D18E9790019AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3737B6361D33DB0A001BDF05 /* MemeRaj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeRaj.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3714C7D81D18E9780019AE49 /* AppDelegate.swift */,
 				3714C7DA1D18E9780019AE49 /* ViewController.swift */,
+				3737B6361D33DB0A001BDF05 /* MemeRaj.swift */,
 				3714C7DC1D18E9780019AE49 /* Main.storyboard */,
 				3714C7DF1D18E9780019AE49 /* Assets.xcassets */,
 				3714C7E11D18E9780019AE49 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */,
 				3714C7DB1D18E9780019AE49 /* ViewController.swift in Sources */,
 				3714C7D91D18E9780019AE49 /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +488,7 @@
 				3714C7FF1D18E9790019AE49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3714C8001D18E9790019AE49 /* Build configuration list for PBXNativeTarget "MemeRajTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				3714C8021D18E9790019AE49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3714C8031D18E9790019AE49 /* Build configuration list for PBXNativeTarget "MemeRajUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				3714C8051D18E9790019AE49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

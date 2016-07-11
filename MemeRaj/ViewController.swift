@@ -88,13 +88,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //TODO : Hide toolbar & Navigation Bar
         return memedImage
     }
-    
+  /*
     struct Meme {
         var text: String
         var text2: String
         var image: UIImage?
         var memedImage: UIImage
     }
+ 
+ */
     
     func save() {
         //Create the meme
@@ -102,7 +104,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
         
-       // (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+       (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
     
     }
     
