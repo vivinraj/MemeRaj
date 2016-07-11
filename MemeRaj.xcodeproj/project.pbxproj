@@ -15,6 +15,8 @@
 		3714C7EE1D18E9790019AE49 /* MemeRajTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714C7ED1D18E9790019AE49 /* MemeRajTests.swift */; };
 		3714C7F91D18E9790019AE49 /* MemeRajUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714C7F81D18E9790019AE49 /* MemeRajUITests.swift */; };
 		3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B6361D33DB0A001BDF05 /* MemeRaj.swift */; };
+		3737B63B1D341318001BDF05 /* SendMemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */; };
+		3737B63D1D341CE5001BDF05 /* SendMemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3714C7F81D18E9790019AE49 /* MemeRajUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRajUITests.swift; sourceTree = "<group>"; };
 		3714C7FA1D18E9790019AE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3737B6361D33DB0A001BDF05 /* MemeRaj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeRaj.swift; sourceTree = "<group>"; };
+		3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemeCollectionViewController.swift; sourceTree = "<group>"; };
+		3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				3714C7DF1D18E9780019AE49 /* Assets.xcassets */,
 				3714C7E11D18E9780019AE49 /* LaunchScreen.storyboard */,
 				3714C7E41D18E9780019AE49 /* Info.plist */,
+				3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */,
+				3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */,
 			);
 			path = MemeRaj;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3737B63D1D341CE5001BDF05 /* SendMemeTableViewController.swift in Sources */,
+				3737B63B1D341318001BDF05 /* SendMemeCollectionViewController.swift in Sources */,
 				3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */,
 				3714C7DB1D18E9780019AE49 /* ViewController.swift in Sources */,
 				3714C7D91D18E9780019AE49 /* AppDelegate.swift in Sources */,
