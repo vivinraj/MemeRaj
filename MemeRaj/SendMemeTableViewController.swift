@@ -13,6 +13,13 @@ import UIKit
 
 class SendMemeTableViewController: UITableViewController {
     
+   // var mememes[]: Meme
+    
+    var memes: [Meme] {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    }
+    
+    
     override func viewDidLoad() {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem (
@@ -32,7 +39,22 @@ class SendMemeTableViewController: UITableViewController {
             navigationController.presentViewController(Controller, animated: true, completion: nil)
             
         }
+        
+       func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            var cell = tableView.dequeueReusableCellWithIdentifier("SendMeme")! as UITableViewCell
+            let myMemes = self.memes[indexPath.row]
+        
+        
+         
+        // cell.Top.text = myMemes.topTextField
+      //   cell.Bottom.text = myMemes.bottomTextField
+         cell.Image = myMemes.memedImage
+        
+            return cell
+        }
     }
+    
+    
     
     
 }

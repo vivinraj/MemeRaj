@@ -17,6 +17,7 @@
 		3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B6361D33DB0A001BDF05 /* MemeRaj.swift */; };
 		3737B63B1D341318001BDF05 /* SendMemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */; };
 		3737B63D1D341CE5001BDF05 /* SendMemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */; };
+		3737B63F1D348DCA001BDF05 /* CustonMemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B63E1D348DC9001BDF05 /* CustonMemeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3737B6361D33DB0A001BDF05 /* MemeRaj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeRaj.swift; sourceTree = "<group>"; };
 		3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemeCollectionViewController.swift; sourceTree = "<group>"; };
 		3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMemeTableViewController.swift; sourceTree = "<group>"; };
+		3737B63E1D348DC9001BDF05 /* CustonMemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustonMemeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				3714C7E41D18E9780019AE49 /* Info.plist */,
 				3737B63A1D341318001BDF05 /* SendMemeCollectionViewController.swift */,
 				3737B63C1D341CE5001BDF05 /* SendMemeTableViewController.swift */,
+				3737B63E1D348DC9001BDF05 /* CustonMemeCell.swift */,
 			);
 			path = MemeRaj;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3737B63D1D341CE5001BDF05 /* SendMemeTableViewController.swift in Sources */,
+				3737B63F1D348DCA001BDF05 /* CustonMemeCell.swift in Sources */,
 				3737B63B1D341318001BDF05 /* SendMemeCollectionViewController.swift in Sources */,
 				3737B6371D33DB0A001BDF05 /* MemeRaj.swift in Sources */,
 				3714C7DB1D18E9780019AE49 /* ViewController.swift in Sources */,

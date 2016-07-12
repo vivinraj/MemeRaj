@@ -6,11 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="g81-7m-0Pa">
             <objects>
                 <navigationController id="Pzw-e1-yoP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4VD-Sx-yvg"/>
+                    <tabBarItem key="tabBarItem" title="" image="colllectionView" id="4VD-Sx-yvg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddJ-aM-XRi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -37,7 +37,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I9t-Gz-Pbb" customClass="SendMemeViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SendMeme" id="I9t-Gz-Pbb" customClass="SendMemeViewCell">
                                 <rect key="frame" x="0.0" y="64" width="187" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -81,11 +81,11 @@
             </objects>
             <point key="canvasLocation" x="-1525" y="-349"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="AP6-iT-3pd">
             <objects>
                 <navigationController id="Z76-WW-64B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0Q5-HB-5J9"/>
+                    <tabBarItem key="tabBarItem" title="" image="tableView" id="0Q5-HB-5J9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8cI-3v-hPX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -107,12 +107,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ay4-Mt-OmT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SendMeme" id="ay4-Mt-OmT">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ay4-Mt-OmT" id="6rr-V0-l9F">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ay4-Mt-OmT" id="6rr-V0-l9F" userLabel="Image">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rm4-4a-YLe">
+                                            <rect key="frame" x="118" y="-42" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -226,4 +231,8 @@
             <point key="canvasLocation" x="563" y="-264"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="colllectionView" width="30" height="30"/>
+        <image name="tableView" width="30" height="30"/>
+    </resources>
 </document>

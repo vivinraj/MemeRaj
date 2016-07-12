@@ -32,6 +32,8 @@ class SendMemeCollectionViewController: UICollectionViewController {
             navigationController.presentViewController(Controller, animated: true, completion: nil)
             
         }
+        
+        
     }
 
     

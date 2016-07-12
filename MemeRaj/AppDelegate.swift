@@ -45,6 +45,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.memes.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfRowsInSection section: Int) -> Int {
+        return self.memes.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("SendMeme")! as UITableViewCell
+        let myMemes = self.memes[indexPath.row]
+        print("\(indexPath.row)")
+        
+      /*  cell.Top.text = myMemes.topTextField
+        cell.Bottom.text = myMemes.bottomTextField
+        cell.imageForTable.image = myMemes.memedImage */
+        return cell
+    }
+    
+
 
 
 }
